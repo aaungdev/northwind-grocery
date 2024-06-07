@@ -1,5 +1,24 @@
-"use strict";
 document.addEventListener("DOMContentLoaded", async function () {
+  const searchBy = document.getElementById("searchBy");
+  const categoryLabel = document.getElementById("categoryLabel");
+  const categoriesSelect = document.getElementById("categories");
+
+  searchBy.addEventListener("change", async function () {
+    if (searchBy.value === "category") {
+      categoryLabel.style.display = "inline";
+      categoriesSelect.style.display = "inline";
+      await fetchCategories();
+    } else {
+      categoryLabel.style.display = "none";
+      categoriesSelect.style.display = "none";
+      await fetchAllProducts();
+    }
+  });
+
+  categoriesSelect.addEventListener("change", async function () {
+    await fetchProductsByCategory(categoriesSelect.value);
+  });
+
   await fetchAllProducts();
 
   async function fetchAllProducts() {
@@ -17,6 +36,37 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   }
 
+  async function fetchCategories() {
+    try {
+      const response = await fetch("http://localhost:4000/categories");
+      const data = await response.json();
+      console.log("Categories fetched:", data); // Debugging
+      categoriesSelect.innerHTML =
+        '<option value="">Select a category</option>';
+      data.forEach((category) => {
+        const option = document.createElement("option");
+        option.value = category.id;
+        option.textContent = category.name;
+        categoriesSelect.appendChild(option);
+      });
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  }
+
+  async function fetchProductsByCategory(categoryId) {
+    try {
+      const response = await fetch(
+        `http://localhost:4000/products?categoryId=${categoryId}`
+      );
+      const data = await response.json();
+      console.log("Products fetched by category:", data); // Debugging
+      displayProducts(data);
+    } catch (error) {
+      console.error("Error fetching products by category:", error);
+    }
+  }
+
   function displayProducts(products) {
     const productsList = document.getElementById("productsList");
     productsList.innerHTML = "";
@@ -25,7 +75,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       productDiv.classList.add("product");
 
       const description =
-        product.category.description ||
+        product.category?.description ||
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
       const supplierName = product.supplier?.companyName || "Unknown supplier";
 
