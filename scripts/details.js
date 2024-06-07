@@ -27,13 +27,20 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function displayProductDetails(product) {
     const description =
-      product.description ||
+      product.category.description ||
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
     const productDetails = document.getElementById("productDetails");
     productDetails.innerHTML = `
+          <img src="${product.imageUrl || "images/placeholder.jpg"}" alt="${
+      product.name
+    }">
           <h2>${product.name}</h2>
           <p>${description}</p>
-          <p>Price: $${product.unitPrice}</p>
+          <p class="price">Price: $${product.unitPrice}</p>
+          <p>In Stock: ${product.unitsInStock}</p>
+          <p>Supplier: ${
+            product.supplier?.companyName || "Unknown supplier"
+          }</p>
       `;
   }
 });
