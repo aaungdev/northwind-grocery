@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function displayProductDetails(product) {
     const description =
-      product.category.description ||
+      product.category?.description ||
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
     const productDetails = document.getElementById("productDetails");
     productDetails.innerHTML = `
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }">
           <h2>${product.name}</h2>
           <p>${description}</p>
-          <p class="price">Price: $${product.unitPrice}</p>
+          <p class="price">Price: $${product.unitPrice.toFixed(2)}</p>
           <p>In Stock: ${product.unitsInStock}</p>
           <p>Supplier: ${
             product.supplier?.companyName || "Unknown supplier"
