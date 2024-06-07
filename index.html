@@ -3,25 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Northwind Grocery</title>
+    <title>Northwind Grocery - Home</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header>
-      <h1>Northwind Grocery</h1>
+      <h1>Welcome to Northwind Grocery</h1>
       <nav>
         <a href="index.html">Home</a>
         <a href="products.html">Search Products</a>
       </nav>
     </header>
+
     <main>
-      <section>
-        <h2>Welcome to Northwind Grocery</h2>
-        <p>Your one-stop shop for all your grocery needs.</p>
+      <section class="hero">
+        <img src="images/hero.jpg" alt="Northwind Grocery" class="hero-image" />
+        <div class="hero-text">
+          <h2>Your One-Stop Shop for Fresh and Quality Groceries</h2>
+          <p>
+            Discover our wide range of products from fresh produce to everyday
+            essentials.
+          </p>
+          <a href="products.html" class="hero-button">Shop Now</a>
+        </div>
+      </section>
+
+      <section class="highlights">
+        <div class="highlight">
+          <img src="images/fresh-produce.jpg" alt="Fresh Produce" />
+          <h3>Fresh Produce</h3>
+          <p>
+            Get the freshest fruits and vegetables sourced directly from farms.
+          </p>
+        </div>
+        <div class="highlight">
+          <img src="images/dairy-products.jpg" alt="Dairy Products" />
+          <h3>Dairy Products</h3>
+          <p>Quality dairy products to keep your family healthy and happy.</p>
+        </div>
+        <div class="highlight">
+          <img src="images/bakery.jpg" alt="Bakery" />
+          <h3>Bakery</h3>
+          <p>Delicious baked goods, fresh from the oven to your table.</p>
+        </div>
       </section>
     </main>
-    <footer>
-      <p>&copy; 2024 Northwind Grocery. All rights reserved.</p>
-    </footer>
+
+    <footer>&copy; 2024 Northwind Grocery. All rights reserved.</footer>
+
+    <script src="scripts/scripts.js"></script>
   </body>
 </html>
