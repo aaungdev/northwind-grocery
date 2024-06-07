@@ -1,23 +1,21 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fefefe; /* White */
-  color: #333;
+  background-color: #fefefe;
+  color: #080808;
 }
 
-/* Header */
 header {
-  background-color: #373d20; /* Olive Drab */
-  color: #fff;
-  padding: 20px;
+  background-color: #373d20;
+  color: white;
+  padding: 1em 0;
   text-align: center;
 }
 
 header nav a {
-  color: #fff;
-  margin: 0 15px;
+  color: #fefefe;
+  margin: 0 1em;
   text-decoration: none;
 }
 
@@ -25,175 +23,67 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-/* Main Section */
 main {
-  padding: 20px;
+  padding: 2em;
 }
 
-label {
-  font-weight: bold;
-}
-
-select {
-  margin: 0 10px;
-  padding: 5px;
-}
-
-/* Hero Section */
-.hero {
-  margin-top: 10em;
-  position: relative;
-  text-align: center;
-  color: white;
-  margin-bottom: 10em;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.hero-button {
-  background-color: #717744; /* Gold Fusion */
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.hero-button:hover {
-  background-color: #373d20; /* Olive Drab */
-}
-
-/* Highlights Section */
-.highlights {
+.product-card {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
+  gap: 2em;
+  background-color: #f4faf7;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.highlight {
-  flex: 1 1 calc(33% - 40px);
-  background-color: #fefefe; /* White */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 20px;
-  transition: transform 0.2s;
+.product-card img {
+  max-width: 150px;
+  border-radius: 8px;
 }
 
-.highlight img {
-  max-width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 10px;
+.product-info {
+  flex-grow: 1;
 }
 
-.highlight h3 {
-  color: #717744; /* Gold Fusion */
+.product-info h2 {
+  margin-top: 0;
 }
 
-.highlight p {
-  color: #abac7f; /* Grullo */
+.reviews,
+.related-products {
+  margin-top: 2em;
 }
 
-.highlight:hover {
-  transform: translateY(-5px);
-}
-
-/* Products List */
-#productsList {
+.products-list {
   display: flex;
+  gap: 1em;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
 }
 
-.product {
-  background-color: #fefefe; /* White */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  width: calc(33% - 40px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+.products-list .product {
+  flex: 1 1 200px;
+  background-color: #f4fff7;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.product img {
-  max-width: 100%;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 10px;
+.products-list .product img {
+  max-width: 100px;
+  margin-bottom: 0.5em;
 }
 
-.product h3 {
-  margin: 0;
-  color: #717744; /* Gold Fusion */
+.products-list .product h4 {
+  margin: 0.5em 0;
 }
 
-.product p.price {
-  font-weight: bold;
-  color: #abac7f; /* Grullo */
-}
-
-.product a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #717744; /* Gold Fusion */
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.product a:hover {
-  background-color: #373d20; /* Olive Drab */
-}
-
-.product:hover {
-  transform: translateY(-5px);
-}
-
-/* Footer */
 footer {
-  background-color: #080808; /* Smoky Black */
-  color: #fff;
   text-align: center;
-  padding: 10px 0;
-  position: fixed;
+  padding: 1em 0;
+  background-color: #373d20;
+  color: white;
+  position: relative;
   bottom: 0;
   width: 100%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .highlights,
-  #productsList {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .highlight,
-  .product {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .hero-text {
-    width: 90%;
-    padding: 10px;
-    margin-top: 15em;
-  }
 }
