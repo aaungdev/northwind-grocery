@@ -3,7 +3,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
-
   if (productId) {
     await fetchProductDetails(productId);
   }
@@ -12,12 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
       const response = await fetch(`http://localhost:4000/products/${id}`);
       const product = await response.json();
-      console.log("Product details fetched:", product); // Debugging
-      if (product) {
-        displayProductDetails(product);
-      } else {
-        console.error("Product not found:", product);
-      }
+      displayProductDetails(product);
     } catch (error) {
       console.error("Error fetching product details:", error);
     }
@@ -26,19 +20,16 @@ document.addEventListener("DOMContentLoaded", async function () {
   function displayProductDetails(product) {
     const productDetails = document.getElementById("productDetails");
     productDetails.innerHTML = `
-          <h2>${product.name}</h2>
           <img src="images/product-placeholder.png" alt="${product.name}">
+          <h2>${product.name}</h2>
           <p>${product.category.description || "No description available"}</p>
-          <p><strong>Price:</strong> $${product.unitPrice.toFixed(2)}</p>
-          <p><strong>In Stock:</strong> ${product.unitsInStock}</p>
-          <p><strong>Supplier:</strong> ${product.supplier.companyName}</p>
-          <p><strong>Quantity per Unit:</strong> ${product.quantityPerUnit}</p>
-          <p><strong>Units on Order:</strong> ${product.unitsOnOrder}</p>
-          <p><strong>Reorder Level:</strong> ${product.reorderLevel}</p>
-          <p><strong>Discontinued:</strong> ${
-            product.discontinued ? "Yes" : "No"
-          }</p>
-          <a href="products.html">Back to Products</a>
+          <p class="price">Price: $${product.unitPrice.toFixed(2)}</p>
+          <p>In Stock: ${product.unitsInStock}</p>
+          <p>Supplier: ${product.supplier.companyName}</p>
+          <p>Quantity Per Unit: ${product.quantityPerUnit}</p>
+          <p>Units On Order: ${product.unitsOnOrder}</p>
+          <p>Reorder Level: ${product.reorderLevel}</p>
+          <p>Discontinued: ${product.discontinued ? "Yes" : "No"}</p>
       `;
   }
 });

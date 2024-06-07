@@ -1,187 +1,199 @@
-/* General styles */
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4faf7;
-  color: #373d20;
+  background-color: #fefefe; /* White */
+  color: #333;
 }
 
+/* Header */
 header {
-  background-color: #373d20;
-  color: #fefefe;
+  background-color: #373d20; /* Olive Drab */
+  color: #fff;
   padding: 20px;
   text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5em;
-}
-
-nav a {
-  color: #fefefe;
-  margin: 0 10px;
+header nav a {
+  color: #fff;
+  margin: 0 15px;
   text-decoration: none;
 }
 
-nav a:hover {
+header nav a:hover {
   text-decoration: underline;
 }
 
+/* Main Section */
+main {
+  padding: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+select {
+  margin: 0 10px;
+  padding: 5px;
+}
+
+/* Hero Section */
 .hero {
-  background-color: #717744;
-  color: #fefefe;
+  margin-top: 10em;
+  position: relative;
   text-align: center;
-  padding: 60px 20px;
+  color: white;
+  margin-bottom: 10em;
 }
 
-.hero h2 {
-  font-size: 2em;
-  margin: 0;
+.hero-image {
+  width: 100%;
+  height: auto;
 }
 
-.hero p {
-  margin: 20px 0;
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.hero a {
-  background-color: #abac7f;
-  color: #373d20;
+.hero-button {
+  background-color: #717744; /* Gold Fusion */
+  color: #fff;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
 }
 
-.hero a:hover {
-  background-color: #717744;
-  color: #fefefe;
+.hero-button:hover {
+  background-color: #373d20; /* Olive Drab */
 }
 
+/* Highlights Section */
 .highlights {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  padding: 20px;
-  background-color: #f4fffb;
+  gap: 20px;
 }
 
 .highlight {
-  background-color: #fefefe;
+  flex: 1 1 calc(33% - 40px);
+  background-color: #fefefe; /* White */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 20px;
-  width: 30%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  padding: 20px;
+  transition: transform 0.2s;
 }
 
 .highlight img {
-  max-width: 50px;
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
 }
 
 .highlight h3 {
-  margin: 10px 0;
+  color: #717744; /* Gold Fusion */
 }
 
 .highlight p {
-  margin: 10px 0;
+  color: #abac7f; /* Grullo */
 }
 
-/* Footer styles */
-footer {
-  background-color: #080808;
-  color: #fefefe;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+.highlight:hover {
+  transform: translateY(-5px);
 }
 
-/* Products page styles */
-.search-controls {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.search-controls label,
-.search-controls select {
-  margin: 0 10px;
-}
-
+/* Products List */
 #productsList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  gap: 20px;
+  justify-content: space-around;
 }
 
 .product {
-  background-color: #fefefe;
-  border: 1px solid #ddd;
+  background-color: #fefefe; /* White */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  margin: 10px;
-  padding: 20px;
-  width: 30%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  padding: 10px;
+  width: calc(33% - 40px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
 .product img {
   max-width: 100%;
-  height: auto;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
 }
 
 .product h3 {
-  font-size: 1.2em;
-  margin: 10px 0;
+  margin: 0;
+  color: #717744; /* Gold Fusion */
 }
 
-.product p {
-  margin: 10px 0;
+.product p.price {
+  font-weight: bold;
+  color: #abac7f; /* Grullo */
 }
 
 .product a {
-  background-color: #abac7f;
-  color: #373d20;
+  display: inline-block;
+  margin-top: 10px;
   padding: 10px 20px;
+  background-color: #717744; /* Gold Fusion */
+  color: #fff;
   text-decoration: none;
   border-radius: 5px;
 }
 
 .product a:hover {
-  background-color: #717744;
-  color: #fefefe;
+  background-color: #373d20; /* Olive Drab */
 }
 
-/* Details page styles */
-#productDetails {
+.product:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  background-color: #080808; /* Smoky Black */
+  color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-#productDetails img {
-  max-width: 200px;
-  margin: 20px 0;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .highlights,
+  #productsList {
+    flex-direction: column;
+    align-items: center;
+  }
 
-#productDetails h2 {
-  font-size: 2em;
-  margin: 20px 0;
-}
+  .highlight,
+  .product {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-#productDetails p {
-  margin: 10px 0;
-}
-
-#productDetails a {
-  background-color: #abac7f;
-  color: #373d20;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-#productDetails a:hover {
-  background-color: #717744;
-  color: #fefefe;
+  .hero-text {
+    width: 90%;
+    padding: 10px;
+    margin-top: 15em;
+  }
 }
