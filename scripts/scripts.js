@@ -1,5 +1,4 @@
 "use strict";
-
 document.addEventListener("DOMContentLoaded", async function () {
   await fetchAllProducts();
 
@@ -7,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
       const response = await fetch("http://localhost:4000/products");
       const data = await response.json();
-      console.log("Products fetched:", data);
+      console.log("Products fetched:", data); // Debugging
       if (Array.isArray(data)) {
         displayProducts(data);
       } else {
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <img src="${product.imageUrl || "placeholder.jpg"}" alt="${
         product.name
       }">
-                <h3>${product.name || "Lorem ipsum dolor"}</h3>
+                <h3>${product.name || "No name available"}</h3>
                 <p>${description}</p>
                 <p>Price: $${product.unitPrice.toFixed(2)}</p>
                 <p>In Stock: ${product.unitsInStock}</p>

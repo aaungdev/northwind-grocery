@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", async function () {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
     const productDetails = document.getElementById("productDetails");
     productDetails.innerHTML = `
-            <h2>${product.name}</h2>
-            <p>${description}</p>
-            <p>Price: $${product.unitPrice}</p>
-        `;
+          <h2>${product.name}</h2>
+          <p>${description}</p>
+          <p>Price: $${product.unitPrice}</p>
+      `;
   }
 });
