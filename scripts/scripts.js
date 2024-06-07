@@ -25,17 +25,17 @@ document.addEventListener("DOMContentLoaded", async function () {
       productDiv.classList.add("product");
 
       const description =
-        product.description ||
+        product.category.description ||
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
       const supplierName = product.supplier?.companyName || "Unknown supplier";
 
       productDiv.innerHTML = `
-                <img src="${product.imageUrl || "placeholder.jpg"}" alt="${
-        product.name
-      }">
+                <img src="${
+                  product.imageUrl || "images/placeholder.jpg"
+                }" alt="${product.name}">
                 <h3>${product.name || "No name available"}</h3>
                 <p>${description}</p>
-                <p>Price: $${product.unitPrice.toFixed(2)}</p>
+                <p class="price">Price: $${product.unitPrice.toFixed(2)}</p>
                 <p>In Stock: ${product.unitsInStock}</p>
                 <p>Supplier: ${supplierName}</p>
                 <a href="details.html?id=${product.id}">See Details</a>
