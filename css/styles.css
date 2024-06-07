@@ -3,13 +3,13 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f2f2f2; /* Anti-Flash White */
+  background-color: #fefefe; /* White */
   color: #333;
 }
 
 /* Header */
 header {
-  background-color: #81d0e8; /* Middle Blue */
+  background-color: #373d20; /* Olive Drab */
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -48,7 +48,7 @@ select {
 }
 
 .product {
-  background-color: #f4faf7; /* White Smoke */
+  background-color: #fefefe; /* White */
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
@@ -65,26 +65,26 @@ select {
 
 .product h3 {
   margin: 0;
-  color: #71a1d1; /* Iceberg */
+  color: #717744; /* Gold Fusion */
 }
 
 .product p.price {
   font-weight: bold;
-  color: #81d0e8; /* Middle Blue */
+  color: #abac7f; /* Grullo */
 }
 
 .product a {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #81d0e8; /* Middle Blue */
+  background-color: #717744; /* Gold Fusion */
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
 }
 
 .product a:hover {
-  background-color: #71a1d1; /* Iceberg */
+  background-color: #373d20; /* Olive Drab */
 }
 
 .product:hover {
@@ -93,7 +93,7 @@ select {
 
 /* Footer */
 footer {
-  background-color: #333;
+  background-color: #080808; /* Smoky Black */
   color: #fff;
   text-align: center;
   padding: 10px 0;
