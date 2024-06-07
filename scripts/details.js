@@ -26,10 +26,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         }" alt="${product.name}">
         <div class="product-info">
           <h2>${product.name}</h2>
-          <p>${product.category.description || "No description available"}</p>
+          <p>${product.category?.description || "No description available"}</p>
           <p class="price">Price: $${product.unitPrice.toFixed(2)}</p>
           <p>In Stock: ${product.unitsInStock}</p>
-          <p>Supplier: ${product.supplier.companyName}</p>
+          <p>Supplier: ${product.supplier?.companyName}</p>
           <p>Quantity Per Unit: ${product.quantityPerUnit}</p>
           <p>Units On Order: ${product.unitsOnOrder}</p>
           <p>Reorder Level: ${product.reorderLevel}</p>
@@ -37,8 +37,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         </div>
       </div>
     `;
-
-    displayCustomerReviews(productId);
+    displayCustomerReviews(id);
     displayRelatedProducts(product.category.id);
   }
 
