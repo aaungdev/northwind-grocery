@@ -15,6 +15,18 @@
       </nav>
     </header>
     <main>
+      <section>
+        <label for="searchBy">Search by:</label>
+        <select id="searchBy">
+          <option value="viewAll">View all</option>
+          <option value="category">Search by category</option>
+        </select>
+
+        <label for="categories" id="categoryLabel" style="display: none"
+          >Categories:</label
+        >
+        <select id="categories" style="display: none"></select>
+      </section>
       <section id="productsList"></section>
     </main>
     <footer>
