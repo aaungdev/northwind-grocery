@@ -39,6 +39,79 @@ select {
   padding: 5px;
 }
 
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-button {
+  background-color: #717744; /* Gold Fusion */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero-button:hover {
+  background-color: #373d20; /* Olive Drab */
+}
+
+/* Highlights Section */
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.highlight {
+  flex: 1 1 calc(33% - 40px);
+  background-color: #fefefe; /* White */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.2s;
+}
+
+.highlight img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.highlight h3 {
+  color: #717744; /* Gold Fusion */
+}
+
+.highlight p {
+  color: #abac7f; /* Grullo */
+}
+
+.highlight:hover {
+  transform: translateY(-5px);
+}
+
 /* Products List */
 #productsList {
   display: flex;
@@ -100,4 +173,24 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .highlights,
+  #productsList {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlight,
+  .product {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    width: 90%;
+    padding: 10px;
+  }
 }
