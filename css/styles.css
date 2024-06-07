@@ -48,12 +48,12 @@ select {
   margin-bottom: 10em;
 }
 
-.hero-image {
+.heroImage {
   width: 100%;
   height: auto;
 }
 
-.hero-text {
+.heroText {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,7 +64,7 @@ select {
   border-radius: 10px;
 }
 
-.hero-button {
+.heroButton {
   background-color: #717744; /* Gold Fusion */
   color: #fff;
   padding: 10px 20px;
@@ -72,7 +72,7 @@ select {
   border-radius: 5px;
 }
 
-.hero-button:hover {
+.heroButton:hover {
   background-color: #373d20; /* Olive Drab */
 }
 
@@ -191,7 +191,7 @@ footer {
     margin-bottom: 20px;
   }
 
-  .hero-text {
+  .heroText {
     width: 90%;
     padding: 10px;
     margin-top: 15em;
@@ -199,7 +199,7 @@ footer {
 }
 
 /* Product Details Page Styles */
-.product-card {
+.productCard {
   display: flex;
   gap: 20px;
   background-color: #fefefe;
@@ -209,46 +209,46 @@ footer {
   margin-bottom: 20px;
 }
 
-.product-card img {
+.productCard img {
   max-width: 200px;
   border-radius: 5px;
 }
 
-.product-info {
+.productInfo {
   flex-grow: 1;
 }
 
-.product-info h2 {
+.productInfo h2 {
   margin-top: 0;
   color: #717744;
 }
 
-.product-info p.price {
+.productInfo p.price {
   font-weight: bold;
   color: #abac7f;
 }
 
-.product-info p {
+.productInfo p {
   margin: 10px 0;
 }
 
 .reviews,
-.related-products {
+.relatedProducts {
   margin-top: 20px;
 }
 
 .reviews h3,
-.related-products h3 {
+.relatedProducts h3 {
   color: #717744;
 }
 
-.products-list {
+.productsList {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.products-list .product {
+.productsList .product {
   flex: 1 1 calc(33% - 20px);
   background-color: #fefefe;
   padding: 10px;
@@ -257,21 +257,21 @@ footer {
   text-align: center;
 }
 
-.products-list .product img {
+.productsList .product img {
   max-width: 100px;
   margin-bottom: 10px;
 }
 
-.products-list .product h4 {
+.productsList .product h4 {
   margin: 10px 0;
   color: #717744;
 }
 
-.products-list .product p {
+.productsList .product p {
   color: #abac7f;
 }
 
-.products-list .product a {
+.productsList .product a {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 20px;
@@ -281,7 +281,7 @@ footer {
   border-radius: 5px;
 }
 
-.products-list .product a:hover {
+.productsList .product a:hover {
   background-color: #373d20;
 }
 

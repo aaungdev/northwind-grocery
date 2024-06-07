@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", async function () {
   function displayProductDetails(product) {
     const productDetails = document.getElementById("productDetails");
     productDetails.innerHTML = `
-      <div class="product-card">
+      <div class="productCard">
         <img src="${
           product.imageUrl || "images/product-placeholder.png"
         }" alt="${product.name}">
-        <div class="product-info">
+        <div class="productInfo">
           <h2>${product.name}</h2>
           <p>${product.category?.description || "No description available"}</p>
           <p class="price">Price: $${product.unitPrice.toFixed(2)}</p>
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const relatedProducts = await response.json();
       relatedProductsSection.innerHTML = "<h3>Related Products</h3>";
       const productsListDiv = document.createElement("div");
-      productsListDiv.classList.add("products-list");
+      productsListDiv.classList.add("productsList");
       relatedProducts.forEach((product) => {
         const productDiv = document.createElement("div");
         productDiv.classList.add("product");
