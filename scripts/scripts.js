@@ -1,4 +1,5 @@
 "use strict";
+
 document.addEventListener("DOMContentLoaded", async function () {
   const searchBy = document.getElementById("searchBy");
   const categoryLabel = document.getElementById("categoryLabel");
@@ -100,4 +101,11 @@ document.addEventListener("DOMContentLoaded", async function () {
       productsList.appendChild(productDiv);
     });
   }
+
+  // Clear the category selection when switching back to view all
+  searchBy.addEventListener("change", function () {
+    if (searchBy.value !== "category") {
+      categoriesSelect.value = "";
+    }
+  });
 });
