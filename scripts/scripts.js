@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener("DOMContentLoaded", async function () {
   const searchBy = document.getElementById("searchBy");
   const categoryLabel = document.getElementById("categoryLabel");
@@ -8,18 +9,24 @@ document.addEventListener("DOMContentLoaded", async function () {
       categoryLabel.style.display = "inline";
       categoriesSelect.style.display = "inline";
       await fetchCategories();
-    } else {
+    } else if (searchBy.value === "viewAll") {
       categoryLabel.style.display = "none";
       categoriesSelect.style.display = "none";
       await fetchAllProducts();
+    } else {
+      categoryLabel.style.display = "none";
+      categoriesSelect.style.display = "none";
+      document.getElementById("productsList").innerHTML = ""; // Clear products list
     }
   });
 
   categoriesSelect.addEventListener("change", async function () {
-    await fetchProductsByCategory(categoriesSelect.value);
+    if (categoriesSelect.value) {
+      await fetchProductsByCategory(categoriesSelect.value);
+    } else {
+      document.getElementById("productsList").innerHTML = ""; // Clear products list
+    }
   });
-
-  await fetchAllProducts();
 
   async function fetchAllProducts() {
     try {
